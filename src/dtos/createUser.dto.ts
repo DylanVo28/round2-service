@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator";
 
-export class UserDto{
+export class CreateUserDto{
   @IsNotEmpty()
     //you can add validate length such as @Length(6,20)
   userName: string

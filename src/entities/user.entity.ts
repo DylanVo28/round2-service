@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, Unique } from "typeorm";
 import { IsNotEmpty } from "class-validator";
+import { Movie } from "./movie.entity";
 
 
 @Entity()
@@ -21,4 +22,8 @@ export class User{
   @Column()
   @IsNotEmpty()
   password: string
+
+  // many user - many vote like
+  @ManyToMany(type => Movie, movie=>movie.likes)
+  movies: Movie[]
 }
