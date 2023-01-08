@@ -1,73 +1,36 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+# Project structure NestJs App
+````sh
+root
+|
+--/src
+|
+----/constants    Constant value and Enum
+|
+----/controllers  A controller is a class that handles incoming HTTP requests and returns HTTP responses.
+|
+----/dtos         DTOs are classes that are used to transfer data between the server and the client in a NestJS app.
+|
+----/entities     An entity is an object that represents a record in a database table or a document in a NoSQL database.
+|
+----/guards       A route guard is a class that implements the CanActivate interface from the @nestjs/common package and is used to protect routes and perform authentication and authorization tasks
+|
+----/interceptors An interceptor is a class that implements the Interceptor interface from the @nestjs/common package and is used to intercept incoming HTTP requests and outgoing HTTP responses to perform tasks such as logging or adding headers to responses.
+|
+----/interfaces   An interface is a class that defines a set of properties and methods that a class must implement.
+|
+----/modules      A module is a class that is decorated with the @Module() decorator from the @nestjs/common package and is used to organize the different components of your app (controllers, services, pipes, etc.) into logical units.
+|
+----/pipes        A pipe is a class that is decorated with the @Injectable() decorator and is used to transform the data of an HTTP request or response.
+|
+----/services     A service is a class that is decorated with the @Injectable() decorator and is used to encapsulate business logic and provide a set of related functions that can be used by one or more controllers.
+|
+----/shared       The shared folder is a good place to put utility functions, constants, and other pieces of code that are used in multiple parts of the app, but don't fit into any particular module.
+|
+----main.ts       The main.ts file typically imports the root module of the app (usually app.module.ts) and calls the createNestApplication() function from the @nestjs/core package to create the NestJS application.
+|
+--.env           This file config to development environment
+|
+--.env.staging      This file config to staging environment
+|
+--.env.prod      This file config to production environment
+````
