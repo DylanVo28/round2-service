@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Unique } from "typeorm";
 import { IsNotEmpty, Length } from "class-validator";
 import { User } from "./user.entity";
-import { JoinTable } from "typeorm/browser";
+import { JoinTable } from "typeorm";
 
 
 @Entity()

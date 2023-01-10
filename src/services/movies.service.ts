@@ -17,13 +17,14 @@ export class MoviesService {
 
   async getMovies(query: any): Promise<MovieInterface[]>{
 
-    const result=await this.repository.createQueryBuilder('m')
-      .select(['m.id','m.title','m.image','m.numberOfLike','m.isLike'])
-      //... write query database using lib typeorm in here
-
-      .skip(query.size*query.index).take(query.size).getManyAndCount()
-
-   return result
+   //  const result=await this.repository.createQueryBuilder('m')
+   //    .select(['m.id','m.title','m.image','m.numberOfLike','m.isLike'])
+   //    //... write query database using lib typeorm in here
+   //
+   //    .skip(query.size*query.index).take(query.size).getManyAndCount()
+   //
+   // return result
+    return []
   }
 
   async updateMovie(id:number,updateMovie: UpdateMovieDto,userInterface: UserInterface):Promise<MovieInterface>{
